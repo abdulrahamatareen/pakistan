@@ -1,0 +1,32 @@
+<body   background="kahja.png">
+<Link rel="stylesheet" href="khan1.css"/>
+<div  id="page02">
+<center>
+<div  id="number1"><p><font color="yellow"><big><big> <%= link_to 'HOme', controller: 'welcome' %></big></big><big><big><%= link_to 'Blog', controller: 'articles' %></big></big><big><big><%= link_to 'New article', new_article_path %></big></big></font>
+</div>
+<div  id="number2"><p><big><big><big><big><font color="#10f">Listing Page</font></big></big></big></big></p></div>
+<div  id="welcome">
+
+</div>
+<table bgcolor="pink" border="3" bordercolor="blue">
+<tr>
+<th>Title</th>
+<th>Text</th>
+<th colspan="2"></th>
+</tr>
+<% @articles.each do |article| %>
+<tr>
+<td><%= article.title %></td>
+<td><%= article.text %></td>
+<td><%= link_to 'Show', article_path(article) %></td>
+<td><%= link_to 'Edit', edit_article_path(article) %></td>
+
+<td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+
+</table>
+<%= link_to 'New article', new_article_path %>
+</center>
+</div>
+</body>

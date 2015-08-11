@@ -1,0 +1,11 @@
+
+<body   background="kahja.png">
+<Link rel="stylesheet" href="khan1.css"/>
+<div  id="page02">
+<center>
+<div  id="number1"><p><font color="yellow"><big><big> <%= link_to 'HOme', controller: 'welcome' %></big></big><big><big><%= link_to 'Blog', controller: 'articles' %></big></big><big><big><%= link_to 'New article', new_article_path %></big></big></font>
+</div>
+<div  id="number2"><p><big><big><big><big><font color="#10f">New Article</font></big></big></big></big></p></div>
+<%= render 'form' %>
+<%= link_to 'Back', articles_path %>
+</body>
